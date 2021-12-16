@@ -8,7 +8,7 @@
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/it-brasil/3CX/master/install3cx.sh)"
 ~~~
 
-### 1.2) Concorde com a licença do 3CX precioando Enter
+### 1.2) Concorde com a licença do 3CX pressionando Enter
 
 <img src="images/3CX_Install_License.png" width="500" alt="3CX License" />
 
