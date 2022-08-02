@@ -35,7 +35,7 @@ printf "${BLUE}"
 center "Install Dependences"
 printf "${END}"
 
-sudo apt-get install -y gnupg  gnupg2 gnupg1 net-tools dphys-swapfile
+sudo apt-get install -y wget gnupg  gnupg2 gnupg1 net-tools dphys-swapfile
 
 printf "${GREEN}"
 center "Add 3CX Repository to Debian 10"
