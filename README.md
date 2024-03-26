@@ -1,11 +1,11 @@
 # Scripts 3CX
 
-## 1) Instalação do 3CX no Debian 10 (Buster)
+## 1) Instalação do 3CX no Debian 12 (Bookworm)
 
 ### 1.1) Execute o comando abaixo no Terminal do Servidor Linux
 
 ~~~script
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/it-brasil/3CX/master/install3cx.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/it-brasil/3CX/debian12/install3cx.sh)"
 ~~~
 
 ### 1.2) Concorde com a licença do 3CX pressionando Enter
@@ -17,4 +17,4 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/it-brasil/3CX/master/insta
 <img src="images/3CX_Install_Run_Tool.png" width="300" alt="3CX Select Tool" />
 
 ### 1.4) Continue com o processo de instalação e configuração seguindo o guia da 3CX
-#### [Primeira Configuração do 3CX](https://www.3cx.com.br/docs/manual/configurando-pabx/#h.8e3ybf57sm8n)
+#### [Primeira Configuração do 3CX](https://www.3cx.com.br/docs/manual/instalar/#h.7i0u9o82etyd)
