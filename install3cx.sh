@@ -2,11 +2,11 @@
 set -eu
 
 ###################################################################
-#Script Name	: install3cx.sh
-#Description	: Install 3CX on Debian 10
-#Author       	: Renan Teixeira
-#Email         	: contato@renanteixeira.com.br
-#Version        : 0.1 - 2021-12-09
+#Script Name    : install3cx.sh
+#Description    : Install 3CX on Debian 12
+#Author         : Renan Teixeira
+#Email          : contato@renanteixeira.com.br
+#Version        : 0.2 - 2024-03-26
 ###################################################################
 
 #Global variables
@@ -17,9 +17,9 @@ BLUE="\e[34m"
 YELLOW="\e[33m"
 
 center() {
-	termwidth="$(tput cols)"
-	padding="$(printf '%0.1s' ={1..500})"
-	printf '%*.*s %s %*.*s\n' 0 "$(((termwidth-2-${#1})/2))" "$padding" "$1" 0 "$(((termwidth-1-${#1})/2))" "$padding"
+        termwidth="$(tput cols)"
+        padding="$(printf '%0.1s' ={1..500})"
+        printf '%*.*s %s %*.*s\n' 0 "$(((termwidth-2-${#1})/2))" "$padding" "$1" 0 "$(((termwidth-1-${#1})/2))" "$padding"
 }
 
 printf "${GREEN}"
@@ -35,13 +35,13 @@ printf "${BLUE}"
 center "Install Dependences"
 printf "${END}"
 
-sudo apt-get install -y wget gnupg  gnupg2 gnupg1 net-tools dphys-swapfile
+sudo apt-get install -y wget gnupg2 net-tools dphys-swapfile
 
 printf "${GREEN}"
-center "Add 3CX Repository to Debian 10"
+center "Add 3CX Repository to Debian 12"
 printf "${END}"
-wget -O- http://downloads-global.3cx.com/downloads/3cxpbx/public.key | sudo apt-key add -
-echo "deb http://downloads-global.3cx.com/downloads/debian buster main" | sudo tee /etc/apt/sources.list.d/3cxpbx.list
+wget -O- https://repo.3cx.com/key.pub | gpg --dearmor | sudo tee /usr/share/keyrings/3cx-archive-keyring.gpg > /dev/null
+echo "deb [arch=amd64 by-hash=yes signed-by=/usr/share/keyrings/3cx-archive-keyring.gpg] http://repo.3cx.com/3cx bookworm main" | sudo tee /etc/apt/sources.list.d/3cxpbx.list
 
 sudo apt-get update
 
